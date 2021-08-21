@@ -1,0 +1,1 @@
+web: gunicorn zuriproject.wsgi --log-file -

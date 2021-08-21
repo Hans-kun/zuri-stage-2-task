@@ -1,0 +1,261 @@
+{% load static %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+
+<head>
+
+	<title>Okpala Hans | Web Designer, Director | okpalahans@gmail.com</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css"
+		href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="{% static 'css/resume.css' %}" media="all" />
+
+</head>
+
+<body>
+
+	<div id="doc2" class="yui-t7" style="padding-left: 12%; padding-right: 12%;">
+		<div id="inner">
+
+			<div id="hd">
+				<div class="row">
+					{% for person in customer %}
+					<div class="col-6">
+						<h1>{{ person.name }}</h1>
+						<h2>{{ person.occupation }}</h2>
+					</div>
+
+					<div class="col-6 ">
+
+						<img style="float: right;" src="{% static 'images/hng.png' %}" class="rounded float-end"
+							alt="...">
+						<!-- <h3><a id="pdf" href="#">Download PDF</a></h3>
+							<h3><a href="mailto:name@yourdomain.com">name@yourdomain.com</a></h3>
+							<h3>(313) - 867-5309</h3> -->
+					</div>
+					<!--// .contact-info -->
+
+					{% endfor %}
+				</div>
+				<!--// .yui-gc -->
+			</div>
+			<!--// hd -->
+
+			<div id="bd">
+				<div id="yui-main">
+					<div class="yui-b">
+						<div class="row">
+							{% for person in customer %}
+
+							<div class="col-3">
+								<h2>Profile</h2>
+							</div>
+							<div class="col-9">
+								<p class="enlarge">
+									{{ person.about }}
+								</p>
+							</div>
+
+
+							{% endfor %}
+						</div>
+						<!--// .yui-gf -->
+						<hr>
+						<div class="yui-gf row">
+							<div class="col-3">
+								<h2>Skills</h2>
+							</div>
+							<div class="col-9">
+								<div class="row">
+									{% for skill in skills %}
+									<div class="talent col-4">
+
+										<h2>{{skill.title}}</h2>
+										<p>{{ skill.description }}</p>
+									</div>
+
+									{% endfor %}
+									<!-- <div class="talent">
+										<h2>Interface Design</h2>
+										<p>Credibly streamline mission-critical value with multifunctional functionalities.	 </p>
+									</div>
+	
+									<div class="talent">
+										<h2>Project Direction</h2>
+										<p>Proven ability to lead and manage a wide variety of design and development projects in team and independent situations.</p>
+									</div> -->
+								</div>
+							</div>
+						</div>
+						<!--// .yui-gf -->
+
+						<div class="yui-gf row">
+							<div class="col-3">
+								<h2>Technical</h2>
+							</div>
+							<div class="col-9">
+								<div class="row">
+									{% for tech in technical %}
+									<div class="col-12">
+										<ul class="talent" style="display: flex; ">
+											<li style="align-items: flex-start;">{{tech.tech_stack}}</li>
+
+										</ul>
+
+										<!-- <ul class="talent">
+											<li>Jquery</li>
+											<li>PHP</li>
+											<li class="last">CVS / Subversion</li>
+										</ul>
+	
+										<ul class="talent">
+											<li>OS X</li>
+											<li>Windows XP/Vista</li>
+											<li class="last">Linux</li>
+										</ul> -->
+									</div>
+									{% endfor %}
+								</div>
+							</div>
+							<!--// .yui-gf-->
+						</div>
+
+						<div class="yui-gf row">
+
+							<div class="col-3">
+								<h2>Experience</h2>
+							</div>
+							<!--// .yui-u -->
+							<div class="col-9">
+								{% for exp in experience %}
+								<div class="yui-u">
+
+									<div class="job">
+										<h2>{{exp.company_name}}</h2>
+										<h3>{{exp.job_role}}</h3>
+										<h4>{{exp.duration}}</h4>
+										<p>{{ exp.job_description }}</p>
+									</div>
+
+									<!-- <div class="job">
+									<h2>Apple Inc.</h2>
+									<h3>Senior Interface Designer</h3>
+									<h4>2005-2007</h4>
+									<p>Progressively reconceptualize multifunctional "outside the box" thinking through inexpensive methods of empowerment. Compellingly morph extensive niche markets with mission-critical ideas. Phosfluorescently deliver bricks-and-clicks strategic theme areas rather than scalable benefits. </p>
+								</div>
+	
+								<div class="job">
+									<h2>Microsoft</h2>
+									<h3>Principal and Creative Lead</h3>
+									<h4>2004-2005</h4>
+									<p>Intrinsicly transform flexible manufactured products without excellent intellectual capital. Energistically evisculate orthogonal architectures through covalent action items. Assertively incentivize sticky platforms without synergistic materials. </p>
+								</div>	
+								<div class="job last">
+									<h2>International Business Machines (IBM)</h2>
+									<h3>Lead Web Designer</h3>
+									<h4>2001-2004</h4>
+									<p>Globally re-engineer cross-media schemas through viral methods of empowerment. Proactively grow long-term high-impact human capital and highly efficient innovation. Intrinsicly iterate excellent e-tailers with timely e-markets.</p>
+								</div> -->
+
+								</div>
+								<!--// .yui-u -->
+								{% endfor %}
+							</div>
+							<!--// .yui-gf -->
+						</div>
+
+
+						<div class="yui-gf last row">
+							<div class="col-3">
+								<h2>Education</h2>
+							</div>
+							<div class="col-9">
+								{% for detail in education %}
+								<div class="yui-u">
+									<h2>{{detail.university_name}} - {{detail.location}}</h2>
+									<h3>{{detail.course}} &mdash; <strong>{{detail.gpa}} GPA</strong> </h3>
+								</div>
+								{% endfor %}
+							</div>
+							<!--// .yui-gf -->
+						</div>
+
+
+					</div>
+					<!--// .yui-b -->
+				</div>
+				<!--// yui-main -->
+			</div>
+			<!--// bd -->
+
+			<div id="ft">
+				<div style="padding-bottom: 5px;">
+					<center>
+						<img src="{% static 'images/IMG-20200125-WA0001.jpg' %}" class="rounded" alt="...">
+
+						<h1 class="mt-3 pt-4 pr-5">CONTACT ME</h1>
+					</center>
+
+				</div>
+
+				<br>
+				<!-- Wrapper container -->
+				<div class="container py-4">
+
+					<!-- Bootstrap 5 starter form -->
+					<form id="contactForm" method="POST">
+						{% csrf_token %}
+						<!-- Name input -->
+						<div class="mb-3">
+							<br>
+							<!-- <label class="form-label" for="name">Name</label> -->
+							<input class="form-control" name='sender_name' id="name" type="text" placeholder="Name"
+								data-sb-validations="required" />
+						</div>
+
+						<!-- Email address input -->
+						<div class="mb-3">
+							<!-- <label class="form-label" for="emailAddress">Email Address</label> -->
+							<br>
+							<input class="form-control" name='sender_email' id="emailAddress" type="email"
+								placeholder="Email Address" data-sb-validations="required, email" />
+						</div>
+
+						<!-- Message input -->
+						<div class="mb-3">
+							<!-- <label class="form-label" for="message">Message</label> -->
+							<br>
+							<textarea class="form-control" name="body" id="message" type="text" placeholder="Message"
+								style="height: 10rem;" data-sb-validations="required"></textarea>
+						</div>
+
+						<!-- Form submit button -->
+						<div class="d-grid">
+							<button class="btn btn-primary btn-lg" type="submit">Submit</button>
+						</div>
+
+					</form>
+
+				</div>
+				<p>Okpala Hans &mdash; <a href="#">okpalahans@gmail.com</a></p>
+			</div>
+			<!--// footer -->
+
+		</div><!-- // inner -->
+
+
+	</div>
+	<!--// doc -->
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+
+</body>
+
+</html>
